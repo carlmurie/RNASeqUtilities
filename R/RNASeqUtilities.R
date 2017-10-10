@@ -33,11 +33,13 @@ createDEGGraphs <- function(dat, title=NULL, fdrCut=0.2) {
      stop("ERROR: dat must be a data.frame")
   }
   
-  if(sum(colnames(dat) !=topTableColNames) != 0) {
-     stop("ERROR: dat has invalid column names. They must be the same as topTable output")
+  ## check that dat has the proper 6 columns
+  if(ncol(dat) != 6 | sum(colnames(dat) !=topTableColNames) != 0) {
+     stop("ERROR: dat is not constructed properly")
   }
-  
+
   ## label significant genes based on FDRCut
+  ## note that if all genes are significant then all genes are colored black not red.
   dat$FDR <- ifelse(dat$adj.P.Val > fdrCut, "NonSig", "Sig")   
   
   ## return object
