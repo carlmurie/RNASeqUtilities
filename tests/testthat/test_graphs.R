@@ -1,4 +1,4 @@
-library(ggplot)
+library(ggplot2)
 
 test_that("createDEGGraphs handles various input", {
   
