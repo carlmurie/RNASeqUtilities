@@ -2,10 +2,11 @@ Package: RNASeqUtilities
 Title: Helper functions for RNASeq analysis and presentation
 Version: 0.0.0.9000
 Authors@R: person("Carl", "Murie", email = "cmurie@fredhutch.org", role = c("aut", "cre"))
-Description: Helper functions for RNASeq analysis and presentation
+Description: Helper functions for RNASeq analysis and presentation.
 Depends: R (>= 3.4.0)
-License: GPL(>=3.0) | file LICENSE
+License: GPL(>=3.0)
 Encoding: UTF-8
 LazyData: true
 Imports:
    ggplot2
+RoxygenNote: 6.0.1
