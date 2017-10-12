@@ -2,8 +2,7 @@
 % Please edit documentation in R/RNASeqUtilities.R
 \name{createDEGGraphs}
 \alias{createDEGGraphs}
-\title{a histogram of FDRs. Input the return value from topTable (limma) with column names
-unchanged.}
+\title{Produce a set of descriptive graphs for DEG limma results (topTable)}
 \usage{
 createDEGGraphs(dat, title = NULL, fdrCut = 0.2)
 }
@@ -20,6 +19,7 @@ list with three ggplot2 elements - p-value histogram, volcano plot, and FDR
        histogram.
 }
 \description{
+Produce a histogram of p-values, volcano plot of logFC vs -log10 p-values and
 a histogram of FDRs. Input the return value from topTable (limma) with column names
 unchanged.
 }

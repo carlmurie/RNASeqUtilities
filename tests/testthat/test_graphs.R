@@ -19,3 +19,35 @@ test_that("createDEGGraphs handles various input", {
   expect_is(createDEGGraphs(dat), "list")
   
 })
+
+test_that("countSampleSizes handles various input", {
+  
+  dat <- data.frame(treat=rep(c("A", "B"), each=20), type=rep(c("C", "D"), 20),
+                    site=rep(c("W", "X", "Y", "Z"), 10),
+                    gender=rep(c("M", "F", "F", "M"), 10)) 
+  
+   truth <- data.frame(rbind(c(20,10,10,5,5,5,5,10,10), c(20,10,10,5,5,5,5,10,10)))
+   dimnames(truth) <- list(c("A", "B"), c("total", "C","D", "W", "X", "Y", "Z", "F", "M"))
+  
+   ## test basic functionality
+   expect_equal(countSampleSizes(dat, ref="treat", factors=c("type", "site", "gender")), truth)
+   expect_equal(countSampleSizes(dat, ref=1, factors=2:4), truth)
+   
+   ## test bad inputs
+   expect_error(countSampleSizes(dat, ref="fred", factors=c("type", "site", "gender")), 
+                "ERROR: fred not a column name of 'dat'")
+   
+   expect_error(countSampleSizes(dat, ref="treat", factors=c("fred", "site", "gender")), 
+                "ERROR: There are elements of 'factors' that are not a column name of 'dat'")
+   expect_error(countSampleSizes(dat, ref=10, factors=2:4), 
+                "ERROR: 'ref' is not a column index of 'dat'")
+   expect_error(countSampleSizes(dat, ref=1, factors=2:10), 
+             "ERROR: There are elements of 'factors' that are not a column indices of 'dat'")
+   expect_warning(countSampleSizes(dat, ref="treat", factors=c("treat","type","site","gender")), 
+                "treat is an element of 'factors'. Is this what you want?")
+                
+})
+   
+   
+   
+   
