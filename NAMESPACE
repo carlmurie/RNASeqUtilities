@@ -2,4 +2,12 @@
 
 export(countSampleSizes)
 export(createDEGGraphs)
+export(outputDEG)
+export(outputGSEA)
+export(runDEG)
+export(runGSEA)
+import(DT)
 import(ggplot2)
+import(gridExtra)
+import(htmltools)
+import(limma)

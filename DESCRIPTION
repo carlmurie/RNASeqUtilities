@@ -8,6 +8,10 @@ License: GPL(>=3.0)
 Encoding: UTF-8
 LazyData: true
 Imports:
-   ggplot2
-RoxygenNote: 6.0.1
-Suggests: testthat
+   ggplot2,
+   limma,
+   testthat,
+   htmltools,
+   DT,
+   gridExtra
+RoxygenNote: 6.1.0

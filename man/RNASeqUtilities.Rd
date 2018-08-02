@@ -6,7 +6,7 @@
 \alias{RNASeqUtilities-package}
 \title{User defined functions for use in RNASeq analysis}
 \description{
-Standardise commonly used commands
+Standardise commonly used functionality in RNASeq analysis.
 }
 \details{
 Create commonly used functions to simplify RNASeq analysis markdown reports.

@@ -1,5 +1,54 @@
-library(ggplot2)
 
+
+## runDEG test code
+test_that("runDEG handles various input", {
+  
+  ## test basic functionality objects: voomTest, voomIndices, voomCoefs, voomLabs, voomPheno
+  load(paste0(system.file(package="RNASeqUtilities"), "/extdata/voomNormalisedData.Rda"))
+  
+  expect_is(runDEG(voomTest, voomCoefs, voomLabs, doRandomEffect=FALSE, blocker=NULL), "list")
+  ##expect_is(runDEG(voomTest, voomCoefs, voomLabs, doRandomEffect=TRUE, blocker=voomPheno$SID,
+  ##                 doRead=FALSE, doWrite=TRUE, rdaPath="~/tmp.rda"), "list")
+  ##expect_is(runDEG(voomTest, voomCoefs, voomLabs, doRandomEffect=TRUE, blocker=voomPheno$SID,
+  ##                 doRead=TRUE, doWrite=FALSE, rdaPath="~/tmp.rda"), "list")
+  
+  ## test error checking
+  expect_error(runDEG(voomTest, NULL))
+  expect_error(runDEG(NULL, voomCoefs))
+  expect_error(runDEG(voomTest, voomCoefs, voomLabs, doRandomEffect=TRUE, blocker=NULL))
+  expect_error(runDEG(voomTest, voomCoefs, voomLabs, doRandomEffect=TRUE, blocker=1:50))
+  expect_error(runDEG(voomTest, c(voomCoefs, "Fred")))
+  expect_error(runDEG(voomTest, voomCoefs, labels=voomCoefs[-1]))
+  expect_error(runDEG(voomTest, voomCoefs, labels=voomCoefs, doWrite=TRUE))
+  expect_error(runDEG(voomTest, voomCoefs, labels=voomCoefs, doRead=TRUE))
+  expect_error(runDEG(voomTest, voomCoefs, labels=voomCoefs, doRead=TRUE, rdaPath="Fred"))
+  
+})
+
+
+## runGSEA test code
+test_that("runGSEA handles various input", {
+  
+  ## test basic functionality objects: voomTest, voomIndices, voomCoefs, voomLabs
+  load(paste0(system.file(package="RNASeqUtilities"), "/extdata/voomNormalisedData.Rda"))
+  
+  expect_is(runGSEA(voomTest, voomIndices, voomCoefs, voomLabs), "list")
+  expect_is(runGSEA(voomTest, voomIndices, voomCoefs, voomLabs, onlySigs=TRUE, FDRCut=0.5), "list")
+  
+  ## test error checking
+  expect_error(runGSEA(voomTest, NULL, voomCoefs))
+  expect_error(runGSEA(NULL, voomIndices, voomCoefs))
+  expect_error(runGSEA(voomTest, voomIndices, NULL))
+  expect_error(runGSEA(voomTest, voomIndices, c(voomCoefs, "Fred")))
+  expect_error(runGSEA(voomTest, voomIndices, voomCoefs, labels=voomCoefs[-1]))
+  expect_error(runGSEA(voomTest, voomIndices, voomCoefs, onlySigs="Fred"))
+  expect_error(runGSEA(voomTest, voomIndices, voomCoefs, onlySigs=TRUE, FDRCut="Fred"))
+  expect_error(runGSEA(voomTest, voomIndices, voomCoefs, onlySigs=TRUE, FDRCut=-1))
+  expect_error(runGSEA(voomTest, voomIndices, voomCoefs, onlySigs=TRUE, FDRCut=2))
+})
+
+
+## createDEGGRaphs test code
 test_that("createDEGGraphs handles various input", {
   
   ## test basic functionality
@@ -20,6 +69,7 @@ test_that("createDEGGraphs handles various input", {
   
 })
 
+## countSampleSizes test code
 test_that("countSampleSizes handles various input", {
   
   dat <- data.frame(treat=rep(c("A", "B"), each=20), type=rep(c("C", "D"), 20),
