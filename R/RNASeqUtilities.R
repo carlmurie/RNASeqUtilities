@@ -32,6 +32,10 @@ NULL
 #' @param title string for caption of table
 #' @param align parameter for 'position' argument for kable_styling. default: left
 #'
+#' @return kable table
+#'
+#' @export
+#'
 headerKable <- function(tabley, labels=NULL, levels=NULL, title=NULL, align="left") {
 
   ## check that 'labels' and 'levels' are of same length
