@@ -10,7 +10,7 @@ countSampleSizes(dat, ref, factors)
 \item{dat}{data.frame of phenotype variables. Each row is one sample and each column
 is a factor of interest}
 
-\item{ref}{character string or numeric column index referencing column for which 
+\item{ref}{character string or numeric column index referencing column for which
 'factors' is tabulated on.}
 
 \item{factors}{vector of column labels or column indices defining which factors are to
@@ -21,6 +21,6 @@ data.frame showing frequencies of 'factors' levels for 'ref'
 }
 \description{
 Count number of instances for each combination of factor levels in relation to reference
-factor. First column of return data.frame is total number of elements for each level 
+factor. First column of return data.frame is total number of elements for each level
 of 'ref'. Used to calculate sample sizes for experimental designs.
 }

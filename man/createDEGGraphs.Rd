@@ -11,7 +11,7 @@ createDEGGraphs(dat, title = NULL, fdrCut = 0.2)
 
 \item{title}{character string for title of graph.}
 
-\item{fdrCut}{Significance cut-off value for FDR. Genes who pass cut-off will be 
+\item{fdrCut}{Significance cut-off value for FDR. Genes who pass cut-off will be
 shown in red in volcano plot.}
 }
 \value{

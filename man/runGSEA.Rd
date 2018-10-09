@@ -14,11 +14,11 @@ output of voom function in limma.}
 \item{geneIndices}{List of gene indices corresponding to gene sets. It is created by
 ids2indices function in limma.}
 
-\item{coefs}{Vector of coefficients to test. They must map to a coefficient in the 
+\item{coefs}{Vector of coefficients to test. They must map to a coefficient in the
 design matrix in 'voomDat'.}
 
 \item{labels}{Vector of character strings that labels each coefficient being tested. This
-allows for more human readable labels than the lmFit coefficients. Labels 
+allows for more human readable labels than the lmFit coefficients. Labels
 must map one to one to 'coefs'.}
 
 \item{onlySigs}{Boolean: if TRUE return only genesets that pass the 'FDRCut' threshold

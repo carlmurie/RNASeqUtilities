@@ -15,7 +15,7 @@ outputDEG(deg, graphs, doSlides = TRUE, onlySigs = FALSE,
 \item{doSlides}{Boolean: If TRUE then output markdown slides else produce standard markdown.}
 
 \item{onlySigs}{Boolean: if TRUE output only genesets that pass the 'FDRCut' threshold
-(output message if no significant gene sets) else output all genesets. 
+(output message if no significant gene sets) else output all genesets.
 Default is FALSE.}
 
 \item{cutOnPval}{Boolean: if TRUE use pvalCut for threshold else use FDRCut}

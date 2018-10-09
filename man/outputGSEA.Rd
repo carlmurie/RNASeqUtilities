@@ -13,7 +13,7 @@ outputGSEA(gsea, doSlides = TRUE, onlySigs = TRUE, FDRCut = 0.2,
 \item{doSlides}{Boolean: If TRUE then output markdown slides else produce standard markdown.}
 
 \item{onlySigs}{Boolean: if TRUE output only genesets that pass the 'FDRCut' threshold
-(output message if no significant gene sets) else output all genesets. 
+(output message if no significant gene sets) else output all genesets.
 Default is FALSE.}
 
 \item{FDRCut}{FDR threshold to use to determine significance. Default is 0.2.}

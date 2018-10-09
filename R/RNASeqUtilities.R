@@ -12,6 +12,8 @@
 #' @import htmltools
 #' @import DT
 #' @import gridExtra
+#' @import knitr
+#' @import kableExtra
 NULL
 
 

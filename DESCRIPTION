@@ -1,7 +1,9 @@
 Package: RNASeqUtilities
 Title: Helper functions for RNASeq analysis and presentation
-Version: 0.0.0.9000
+Version: 1.1
 Authors@R: person("Carl", "Murie", email = "cmurie@fredhutch.org", role = c("aut", "cre"))
+Author: Carl Murie [cre, aut]
+Maintainer: Carl Murie <cmurie@fredhutch.org>
 Description: Helper functions for RNASeq analysis and presentation.
 Depends: R (>= 3.4.0)
 License: GPL(>=3.0)
@@ -13,5 +15,7 @@ Imports:
    testthat,
    htmltools,
    DT,
-   gridExtra
+   gridExtra,
+   knitr,
+   kableExtra
 RoxygenNote: 6.1.0

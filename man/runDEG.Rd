@@ -11,25 +11,25 @@ runDEG(voomDat, coefs, doRandomEffect = FALSE, blocker = NULL,
 \item{voomDat}{Eset of voom normalised data which must include the design. This is the
 output of voom function in limma.}
 
-\item{coefs}{Vector of coefficients to test. They must map to a coefficient in the 
+\item{coefs}{Vector of coefficients to test. They must map to a coefficient in the
 design matrix in 'voomDat'.}
 
 \item{doRandomEffect}{Boolean indicating whether there is a random effect in the model. If
-so then 'duplicateCorrelation' function is run based on 'blocker'. 
+so then 'duplicateCorrelation' function is run based on 'blocker'.
 The blocking factor must be identified by 'blocker' parameter.}
 
 \item{blocker}{Vector showing factor of random effect. It is only used if doRandomEffect
 is TRUE.}
 
 \item{labels}{Vector of character strings that labels each coefficient being tested. This
-allows for more human readable labels than the lmFit coefficients. Labels 
+allows for more human readable labels than the lmFit coefficients. Labels
 must map one to one to 'coefs'.}
 
 \item{doWrite}{Boolean indicating whether to write the random correlation and fitted model
-to file defined in 'rdaPath'. Useful because computation time can be 
+to file defined in 'rdaPath'. Useful because computation time can be
 prohibitive when fitting model.}
 
-\item{doRead}{Boolean indicating whether to read random corrleation and fitted model from 
+\item{doRead}{Boolean indicating whether to read random corrleation and fitted model from
 file defined in 'rdaPath'. Data must have been previously saved with 'doWrite'
 parameter.}
 
@@ -37,7 +37,7 @@ parameter.}
 Must be defined if 'doWrite' or 'doRead' are TRUE.}
 }
 \value{
-List of DEG results. Each element in list corresponds to the results for the 
+List of DEG results. Each element in list corresponds to the results for the
         matching coefficients in 'coefs'.
 }
 \description{
