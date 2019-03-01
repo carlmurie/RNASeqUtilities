@@ -5,7 +5,7 @@
 \title{Create a nicer kable table.}
 \usage{
 headerKable(tabley, labels = NULL, levels = NULL, title = NULL,
-  align = "left")
+  align = "left", escapeMe = FALSE)
 }
 \arguments{
 \item{tabley}{data.frame of sample sizes. Each column is a level and each row
@@ -19,6 +19,9 @@ and the remaining columns will be the levels.}
 \item{title}{string for caption of table}
 
 \item{align}{parameter for 'position' argument for kable_styling. default: left}
+
+\item{escapeMe}{escape parameter for kable which is logical to escape special
+symbols}
 }
 \value{
 kable table

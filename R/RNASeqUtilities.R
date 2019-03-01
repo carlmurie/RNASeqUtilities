@@ -33,12 +33,15 @@ NULL
 #' @param levels vector of number of levels for each factor in 'labels'
 #' @param title string for caption of table
 #' @param align parameter for 'position' argument for kable_styling. default: left
+#' @param escapeMe escape parameter for kable which is logical to escape special
+#'                symbols
 #'
 #' @return kable table
 #'
 #' @export
 #'
-headerKable <- function(tabley, labels=NULL, levels=NULL, title=NULL, align="left") {
+headerKable <- function(tabley, labels=NULL, levels=NULL, title=NULL, align="left",
+                        escapeMe=FALSE) {
 
   ## check that 'labels' and 'levels' are of same length
   if(length(labels) != length(levels)) {
@@ -51,7 +54,8 @@ headerKable <- function(tabley, labels=NULL, levels=NULL, title=NULL, align="lef
   }
 
   names(levels) <- labels
-  tab <- kable(tabley, caption=title, align=rep("c", ncol(tabley))) %>%
+  tab <- kable(tabley, caption=title, align=rep("c", ncol(tabley)),
+               escape=escapeMe) %>%
          kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                        full_width=FALSE, position=align)
 
