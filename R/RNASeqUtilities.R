@@ -35,7 +35,7 @@ NULL
 #' @param align parameter for 'position' argument for kable_styling. default: left
 #' @param escapeMe escape parameter for kable which is logical to escape special
 #'                symbols
-#' @param digitts
+#' @param digitts set number of significant digits to be displayed
 #'
 #' @return kable table
 #'
