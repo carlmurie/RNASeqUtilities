@@ -5,7 +5,7 @@
 \title{Create a nicer kable table.}
 \usage{
 headerKable(tabley, labels = NULL, levels = NULL, title = NULL,
-  align = "left", escapeMe = FALSE)
+  align = "left", escapeMe = FALSE, digitts = 3)
 }
 \arguments{
 \item{tabley}{data.frame of sample sizes. Each column is a level and each row
@@ -22,6 +22,8 @@ and the remaining columns will be the levels.}
 
 \item{escapeMe}{escape parameter for kable which is logical to escape special
 symbols}
+
+\item{digitts}{set number of significant digits to be displayed}
 }
 \value{
 kable table
